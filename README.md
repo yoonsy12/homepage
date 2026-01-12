@@ -32,3 +32,9 @@
 ## ⚠️ 설정 안내
 이 홈페이지는 **Google Firebase**와 연결되어 있습니다.
 정상적으로 작동하려면 Firebase 콘솔에서 **Authentication(이메일 로그인 사용 설정)**과 **Firestore Database(데이터베이스 생성)**가 활성화되어 있어야 합니다.
+
+### 데이터베이스 규칙(Rules) 설정
+데이터가 저장되지 않는다면 Firestore Rules를 다음과 같이 변경해보세요 (테스트용):
+```
+allow read, write: if true;
+```
