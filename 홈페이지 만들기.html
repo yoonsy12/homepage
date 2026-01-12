@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 깃허브 페이지(GitHub Pages)로 호스팅하려면 이 파일의 이름을 index.html로 변경해서 업로드하세요. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="초등학교 6학년 우리반 홈페이지입니다. 가정통신문, 알림장 기능을 제공합니다.">
+    <!-- 탭에 표시될 아이콘 (파비콘) 설정 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏫</text></svg>">
+    <title>6학년 우리반 홈페이지</title>
+    <style>
+        /* 전체 스타일 */
+        body {
+            font-family: 'Jua', 'Malgun Gothic', sans-serif; /* 귀여운 느낌의 폰트 권장 */
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* 헤더 */
+        header {
+            background-color: #4facfe;
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* 네비게이션 */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            margin: 0 15px;
+            cursor: pointer;
+            color: #555;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #e0f7fa;
+            color: #007bff;
+        }
+
+        /* 메인 컨텐츠 영역 */
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h2 {
+            border-bottom: 3px solid #4facfe;
+            padding-bottom: 10px;
+            color: #007bff;
+        }
+
+        /* 가정통신문 리스트 스타일 */
+        .notice-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .notice-item:hover {
+            transform: scale(1.02);
+            background-color: #fafafa;
+            cursor: pointer;
+        }
+
+        .notice-date {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* 폼 스타일 (로그인/회원가입) */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* 패딩 포함 너비 계산 */
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #007bff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏫 6학년 우리반 홈페이지</h1>
+    </header>
+
+    <nav>
+        <button onclick="showSection('home')">홈</button>
+        <button onclick="showSection('notice')">가정통신문</button>
+        <button onclick="showSection('login')">로그인</button>
+        <button onclick="showSection('signup')">회원가입</button>
+    </nav>
+
+    <main id="content">
+        <!-- 홈 화면 -->
+        <section id="home">
+            <h2>환영합니다! 👋</h2>
+            <p>우리반 친구들을 위한 소통 공간입니다.</p>
+            <p>오늘의 급식, 숙제, 그리고 재미있는 소식들을 확인해보세요.</p>
+            <div style="text-align: center; margin-top: 50px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png" alt="학교 아이콘" width="150">
+            </div>
+        </section>
+
+        <!-- 가정통신문 화면 -->
+        <section id="notice" class="hidden">
+            <h2>📢 가정통신문 & 알림장</h2>
+            <div class="notice-list">
+                <div class="notice-item">
+                    <span>[필독] 이번 주 현장체험학습 안내</span>
+                    <span class="notice-date">2024-05-20</span>
+                </div>
+                <div class="notice-item">
+                    <span>수학익힘책 45쪽까지 풀어오기</span>
+                    <span class="notice-date">2024-05-19</span>
+                </div>
+                <div class="notice-item">
+                    <span>준비물: 색종이, 가위, 풀</span>
+                    <span class="notice-date">2024-05-18</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 로그인 화면 -->
+        <section id="login" class="hidden">
+            <h2>🔐 로그인</h2>
+            <div class="form-group">
+                <label>아이디</label>
+                <input type="text" placeholder="아이디를 입력하세요">
+            </div>
+            <div class="form-group">
+                <label>비밀번호</label>
+                <input type="password" placeholder="비밀번호를 입력하세요">
+            </div>
+            <button class="btn-submit" onclick="alert('로그인 되었습니다! (데모)')">로그인 하기</button>
+        </section>
+
+        <!-- 회원가입 화면 -->
+        <section id="signup" class="hidden">
+            <h2>📝 회원가입</h2>
+            <div class="form-group">
+                <label>이름</label>
+                <input type="text" placeholder="이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label>아이디</label>
+                <input type="text" placeholder="사용할 아이디">
+            </div>
+            <div class="form-group">
+                <label>비밀번호</label>
+                <input type="password" placeholder="비밀번호">
+            </div>
+            <button class="btn-submit" onclick="alert('가입이 완료되었습니다! (데모)')">가입하기</button>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // 모든 섹션을 숨김
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // 선택한 섹션만 보여줌
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
