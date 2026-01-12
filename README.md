@@ -8,7 +8,8 @@
 
 - **홈 화면**: 환영 메시지와 학교 이미지
 - **가정통신문**: 알림장 및 공지사항 확인
-- **로그인/회원가입**: 사용자 기능 (데모 버전)
+- **로그인/회원가입**: 이메일 인증을 통한 실제 회원가입 및 로그인
+- **실시간 연동**: 선생님이 글을 쓰면 학생들 화면에 바로 뜨는 기능 (Firebase)
 
 ## 🚀 사용 방법
 
@@ -26,3 +27,8 @@
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
+- Firebase (Authentication, Firestore)
+
+## ⚠️ 설정 안내
+이 홈페이지는 **Google Firebase**와 연결되어 있습니다.
+정상적으로 작동하려면 Firebase 콘솔에서 **Authentication(이메일 로그인 사용 설정)**과 **Firestore Database(데이터베이스 생성)**가 활성화되어 있어야 합니다.
